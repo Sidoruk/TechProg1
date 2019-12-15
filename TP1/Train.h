@@ -14,22 +14,21 @@ private:
 public:
 	TRAIN();
 
-	string get_destination();
 	void set_destination();
+
+	void edit();
 
 	int get_number();
 	void set_number();
 
-	int get_hour();
 	void set_hour();
 
-	int get_minutes();
 	void set_minutes();
 
 	~TRAIN();
 
 	friend std::ostream& operator<< (std::ostream& out, const TRAIN& point);
 	friend std::istream& operator>> (istream& cin, TRAIN& obj);
-	TRAIN& operator=(const TRAIN& train);
+	friend bool operator==(const TRAIN& T1, const TRAIN& T2);
 	friend struct sort_class;
 };
